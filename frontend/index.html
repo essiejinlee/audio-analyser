@@ -1,9 +1,26 @@
-<input type="file" id="fileInput">
-<button onclick="upload()">Analyse</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Audio Analyzer</title>
+</head>
+<body>
 
-<img id="waveform">
-<img id="spectrogram">
-<img id="pitch_plot">
+    <h2>Audio Analysis</h2>
 
-<p id="tempo"></p>
-<p id="pitch"></p>
+    <input type="file" id="fileInput">
+    <button onclick="upload()">Analyse</button>
+
+    <h3>Results</h3>
+
+    <img id="waveform" width="400"><br>
+    <img id="spectrogram" width="400"><br>
+    <img id="pitch_plot" width="400"><br>
+
+    <p id="tempo"></p>
+    <p id="pitch"></p>
+
+    <script src="app.js"></script>
+
+</body>
+</html>

@@ -17,7 +17,7 @@ async def analyse(file: UploadFile = File(...)):
     spectrogram = plot_spectrogram(file_location)
     pitch_plot = plot_pitch(file_location)
     tempo = get_tempo(file_location)
-    pitch = get_pitch(file_location)
+    pitch = float(get_pitch(file_location))
 
     return {
         "waveform": waveform,

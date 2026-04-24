@@ -23,7 +23,7 @@ def plot_spectrogram(file_path):
     y, sr = librosa.load(file_path)
 
     # Compute Short-Time Fourier Transform (STFT)
-    D = librosa.amplitude_to_db(librosa.stft(y), ref=np.max)
+    D = librosa.amplitude_to_db(np.abs(librosa.stft(y)), ref=np.max)
 
     # Create spectrogram plot
     plt.figure()
@@ -63,7 +63,8 @@ def plot_pitch(file_path):
 def get_tempo(file_path):
     y, sr = librosa.load(file_path)
     tempo, _ = librosa.beat.beat_track(y=y, sr=sr)
-    return tempo
+
+    return float(np.squeeze(tempo))
 
 # Estimate average pitch using spectral peaks
 def get_pitch(file_path):

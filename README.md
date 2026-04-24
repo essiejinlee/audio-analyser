@@ -1,5 +1,7 @@
 # Audio Feature Analysis and Visualisation
 
+![Demo](images/demo.png)
+
 ## Overview
 
 This project is an audio analysis tool that extracts and visualises key features from audio signals.
@@ -106,8 +108,11 @@ http://127.0.0.1:8000/docs
 The system generates:
 
 * Waveform plot
+![Waveform](images/waveform.png)
 * Spectrogram
+![Spectrogram](images/spectrogram.png)
 * Pitch contour graph
+![Pitch](images/pitch.png)
 * Numerical values for tempo and pitch
 
 ---

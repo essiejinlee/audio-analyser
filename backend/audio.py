@@ -12,10 +12,10 @@ def plot_waveform(file_path):
     plt.plot(y)
     plt.title("Waveform")
     # Save image
-    plt.savefig("waveform.png")
+    plt.savefig("static/waveform.png")
     plt.close()
 
-    return "waveform.png"
+    return "/static/waveform.png"
 
 # Generate and save spectrogram
 def plot_spectrogram(file_path):
@@ -31,10 +31,10 @@ def plot_spectrogram(file_path):
     plt.colorbar(format='%+2.0f dB')
     plt.title('Spectrogram')
     # Save image
-    plt.savefig("spectrogram.png")
+    plt.savefig("static/spectrogram.png")
     plt.close()
 
-    return "spectrogram.png"
+    return "/static/spectrogram.png"
 
 # Generate pitch contour (pitch over time)
 def plot_pitch(file_path):
@@ -54,10 +54,10 @@ def plot_pitch(file_path):
     plt.title("Pitch Contour")
 
     # Save image
-    plt.savefig("pitch.png")
+    plt.savefig("static/pitch.png")
     plt.close()
 
-    return "pitch.png"
+    return "/static/pitch.png"
 
 # Estimate tempo (BPM)
 def get_tempo(file_path):

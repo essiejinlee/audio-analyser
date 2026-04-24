@@ -11,9 +11,9 @@ async function upload() {
 
     const data = await res.json();
 
-    document.getElementById("waveform").src = data.waveform;
-    document.getElementById("spectrogram").src = data.spectrogram;
-    document.getElementById("pitch_plot").src = data.pitch_plot;
+    document.getElementById("waveform").src = "http://127.0.0.1:8000" + data.waveform;
+    document.getElementById("spectrogram").src = "http://127.0.0.1:8000" + data.spectrogram;
+    document.getElementById("pitch_plot").src = "http://127.0.0.1:8000" + data.pitch_plot;
     document.getElementById("tempo").innerText = "Tempo: " + data.tempo;
     document.getElementById("pitch").innerText = "Pitch: " + data.pitch;
 }

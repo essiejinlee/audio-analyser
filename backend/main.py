@@ -1,8 +1,10 @@
 from fastapi import FastAPI, UploadFile, File
+from fastapi.staticfiles import StaticFiles
 import shutil
 from audio import plot_waveform, plot_spectrogram, plot_pitch, get_tempo, get_pitch
 
 app = FastAPI()
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.post("/analyse/")
 async def analyse(file: UploadFile = File(...)):

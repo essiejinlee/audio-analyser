@@ -1,6 +1,6 @@
 from fastapi import FastAPI, UploadFile, File
 import shutil
-from audio import plot_waveform, plot_spectrogram, get_tempo
+from audio import plot_waveform, plot_spectrogram, plot_pitch, get_tempo, get_pitch
 
 app = FastAPI()
 
@@ -13,10 +13,14 @@ async def analyse(file: UploadFile = File(...)):
 
     waveform = plot_waveform(file_location)
     spectrogram = plot_spectrogram(file_location)
+    pitch_plot = plot_pitch(file_location)
     tempo = get_tempo(file_location)
+    pitch = get_pitch(file_location)
 
     return {
         "waveform": waveform,
         "spectrogram": spectrogram,
-        "tempo": tempo
+        "pitch_plot": pitch_plot,
+        "tempo": tempo,
+        "pitch": pitch
     }

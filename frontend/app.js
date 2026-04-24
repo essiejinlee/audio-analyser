@@ -13,5 +13,7 @@ async function upload() {
 
     document.getElementById("waveform").src = data.waveform;
     document.getElementById("spectrogram").src = data.spectrogram;
+    document.getElementById("pitch_plot").src = data.pitch_plot;
     document.getElementById("tempo").innerText = "Tempo: " + data.tempo;
+    document.getElementById("pitch").innerText = "Pitch: " + data.pitch;
 }
